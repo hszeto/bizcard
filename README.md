@@ -15,3 +15,5 @@ Dependencies include:
     'ngTouch',
     'ui.sortable',
     'LocalStorageModule'
+
+For Heroku deployment, read: http://www.sitepoint.com/deploying-yeomanangular-app-heroku/
