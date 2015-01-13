@@ -1,0 +1,34 @@
+<div class="myContainer">
+<div class="container">
+	<!-- Search Box -->
+  <div class="row">
+	<span class="glyphicon glyphicon-search form-inline">
+		Search: <input ng-model="query" class="form-control">
+		Sort-by: <select ng-model="orderProp" class="form-control">
+					<option value="name">Person</option>
+					<option value="company">Company</option>
+					<option value="email">Email</option>
+				</select>
+	</span>
+	<!-- Edit button -->
+	<span class="input-btn pull-right">
+		<button class="btn btn-info" ng-show="editable" ng-click="editable=0" aria-label="Edit">Edit All</button>
+		<button class="btn btn-info" ng-hide="editable" ng-click="editable=1; query='' " aria-label="Save">Save All</button>
+	</span>
+  </div><br>
+  
+	<!-- Filtering Bizcards list -->
+	<div ui-sortable ng-model="bizcards" ng-init="editable=1">
+		<p class="input-group form-control" ng-repeat="bizcard in bizcards | filter:query | orderBy:orderProp" style=" padding:5px 10px; cursor: move;">
+		  <input type="text" ng-readonly="editable" ng-model="bizcard.name" class="form-control">
+		  <input type="text" ng-readonly="editable" ng-model="bizcard.company" class="form-control">
+		  <input type="text" ng-readonly="editable" ng-model="bizcard.email" class="form-control">
+		  <input type="text" ng-readonly="editable" ng-model="bizcard.other" placeholder="No Additional Info" class="form-control">
+		  <!-- Remove button -->
+		  <span class="input-group-btn">
+		    <button class="btn btn-danger" ng-click="removeBizcard($index)" aria-label="Remove">Delete</button>
+		  </span>
+		</p>
+	</div>
+</div>
+</div>
