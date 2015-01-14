@@ -7,7 +7,7 @@
   <!-- <form role="form" ng-submit="addBizcard()"> -->
     <div class="row">
       <div class="input">
-        <input type="text" ng-model="bizcard.name" placeholder="Name" class="form-control">
+        <input type="text" ng-model="bizcard.name" placeholder="Full Name" class="form-control">
         <input type="text" ng-model="bizcard.company" placeholder="Company Name" class="form-control">
         <input type="text" ng-model="bizcard.email" placeholder="Email" class="form-control">
         <input type="text" ng-model="bizcard.other" placeholder="Additional Info" class="form-control">
@@ -22,10 +22,10 @@
 
   <!-- Bizcards list -->
   <div ui-sortable ng-model="bizcards" ng-init="editable=1">
-    <p class="input-group form-control" ng-repeat="bizcard in bizcards" style=" padding:5px 10px; cursor: move;">
-      <input type="text" ng-readonly="editable" ng-model="bizcard.name" class="form-control">
-      <input type="text" ng-readonly="editable" ng-model="bizcard.company" class="form-control">
-      <input type="text" ng-readonly="editable" ng-model="bizcard.email" class="form-control">
+    <p class="input-group form-control" ng-repeat="bizcard in bizcards | orderBy:'$index*-1' " style=" padding:5px 10px; cursor: move;">
+      <input type="text" ng-readonly="editable" ng-model="bizcard.name" placeholder="Full Name" class="form-control">
+      <input type="text" ng-readonly="editable" ng-model="bizcard.company" placeholder="Company Name" class="form-control">
+      <input type="text" ng-readonly="editable" ng-model="bizcard.email" placeholder="Email" class="form-control">
       <input type="text" ng-readonly="editable" ng-model="bizcard.other" placeholder="No Additional Info" class="form-control">
     </p>
   </div>

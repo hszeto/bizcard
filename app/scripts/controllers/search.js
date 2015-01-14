@@ -21,8 +21,16 @@ angular.module('bizcardApp')
 	$scope.orderProp = 'name';
 
 	// Remove card function
-	$scope.removeBizcard = function (index) {
-	  $scope.bizcards.splice(index, 1);
+ 	$scope.removeBizcard = function (delName) {
+ 		for (var i = 0; i < $scope.bizcards.length; i++){
+ 			if ($scope.bizcards[i].name == delName) {
+ 				$scope.bizcards.splice(i, 1);
+ 			}
+ 		}
 	};
+
+	// $scope.removeBizcard = function (index) {
+	//   $scope.bizcards.splice(index, 1);
+	// };
 
  }]);
