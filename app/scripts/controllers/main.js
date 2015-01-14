@@ -8,7 +8,7 @@
  * Controller of the bizcardApp
  */
 angular.module('bizcardApp')
-  .controller('MainCtrl', function ($scope, localStorageService) {
+  .controller('MainCtrl', ['$scope', 'localStorageService', function ($scope, localStorageService) {
 
 	var bizcardsInStore = localStorageService.get('bizcards');
 
@@ -24,4 +24,4 @@ angular.module('bizcardApp')
 	  $scope.bizcard = '';
 	};
 
-  });
+  }]);

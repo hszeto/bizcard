@@ -8,7 +8,7 @@
  * Controller of the bizcardApp
  */
 angular.module('bizcardApp')
-  .controller('SearchCtrl', function ($scope, localStorageService) {
+  .controller('SearchCtrl', ['$scope', 'localStorageService', function ($scope, localStorageService) {
 
 	var bizcardsInStore = localStorageService.get('bizcards');
 
@@ -25,4 +25,4 @@ angular.module('bizcardApp')
 	  $scope.bizcards.splice(index, 1);
 	};
 
- });
+ }]);
