@@ -18,7 +18,7 @@ Dependencies include:
  <br>
 For Heroku deployment, read: http://www.sitepoint.com/deploying-yeomanangular-app-heroku/ <br>
 	$ grunt --force <br>
- <br>
+ <hr>
 	touch web.js <br>
 		// A simple Node server for Heroku deployment <br>
 		var express = require('express'); <br>
@@ -26,10 +26,10 @@ For Heroku deployment, read: http://www.sitepoint.com/deploying-yeomanangular-ap
 		var public_path = require('path'); <br>
 		app.use(express.static(public_path.join(__dirname, 'dist'))); <br>
 		app.listen(process.env.PORT || 5000); <br>
- <br>
+ <hr>
 	touch Profile <br>
 	 	web: node web.js <br>
-<br>
+<hr>
 How to use:<br>
 - Enter card info
 - click on "search" button
