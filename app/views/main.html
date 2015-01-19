@@ -2,25 +2,21 @@
 <div class="container">
   <h3>Enter New Info</h3>
 
-  <!-- Bizcard input -->
+  <!-- Input New Business Card -->
   <form role="form">
-  <!-- <form role="form" ng-submit="addBizcard()"> -->
     <div class="row">
       <div class="input">
         <input type="text" ng-model="bizcard.name" placeholder="Full Name" class="form-control">
         <input type="text" ng-model="bizcard.company" placeholder="Company Name" class="form-control">
         <input type="text" ng-model="bizcard.email" placeholder="Email" class="form-control">
         <input type="text" ng-model="bizcard.other" placeholder="Additional Info" class="form-control">
-        <!-- Submit button -->
-<!--         <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Add Info">
-        </span> -->
+        <!-- Save button -->
         <button class="btn btn-info" ng-click="addBizcard()" aria-label="Add">Save</button>
       </div>
     </div>
     <br>
 
-  <!-- Bizcards list -->
+  <!-- List All Business Cards $index*-1 to list from recent to oldest -->
   <div ui-sortable ng-model="bizcards" ng-init="editable=1">
     <p class="input-group form-control" ng-repeat="bizcard in bizcards | orderBy:'$index*-1' " style=" padding:5px 10px; cursor: move;">
       <input type="text" ng-readonly="editable" ng-model="bizcard.name" placeholder="Full Name" class="form-control">
