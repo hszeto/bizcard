@@ -1,9 +1,7 @@
 Angular JS project. <br>
- <br>
-Build with the help of Yeoman. <br>
+Build with Yeoman. <br>
  <br>
 A Business Card Orgainzer. <br>
-
 Can be search and filter in the search page. <br>
  <br>
 Dependencies include:
@@ -16,7 +14,7 @@ Dependencies include:
     'ui.sortable',
     'LocalStorageModule' <br>
  <br>
-For Heroku deployment, read: http://www.sitepoint.com/deploying-yeomanangular-app-heroku/ <br>
+For Heroku deployment, refer to: http://www.sitepoint.com/deploying-yeomanangular-app-heroku/ <br>
 	$ grunt --force <br>
  <hr>
 	touch web.js <br>
